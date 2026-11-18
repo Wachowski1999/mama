@@ -65,6 +65,7 @@
   .secret .up { text-decoration: underline; text-decoration-thickness: 2px; }
   .hint { display: block; font-size: 0.9em; color: var(--muted); }
   .print-only { display: none; }
+  .pi { display: none; }
   @media (max-width: 520px) {
     body { font-size: 19px; }
     h1 { font-size: 27px; } h2 { font-size: 22px; }
@@ -81,6 +82,7 @@
     h1 { font-size: 21pt; } h2 { font-size: 16pt; } h3 { font-size: 13.5pt; margin-top: 14px; }
     .progress, .no-print, #copy-btn, #copied { display: none !important; }
     .print-only { display: block; }
+    .pi { display: inline; }
     .card { border: 1px solid #999; padding: 12px 16px; margin: 10px 0; }
     .box, tr, li, label.check, .print-only, .secret { break-inside: avoid; }
     .step-head, h2, h3 { break-after: avoid; }
@@ -98,43 +100,58 @@
 <body>
 <main>
 
-<h1>Tu Uni-ID: el VPN y el código del móvil</h1>
-<p class="sub">Tercera parte, 18 de noviembre de 2026. Empieza aquí.</p>
+<h1>Tu Uni-ID de la Universidad de Heidelberg</h1>
+<p class="sub">Configurar el VPN y el código del móvil, y entrar en Moodle cada día. Versión del 18 de noviembre de 2026.</p>
 
 <div class="progress no-print">
   <div class="bar"><span id="bar"></span></div>
   <small id="progress-text">0 de 4 pasos hechos</small>
 </div>
 
-<!-- ESTADO -->
+<!-- COMO USAR -->
 <section class="card">
-  <h2>Ya hecho</h2>
-  <div class="box good">
-    <ul>
-      <li>✓ La app <b>LinOTP Authenticator</b> está en tu móvil.</li>
-      <li>✓ Tu <b>Uni-ID está activada</b> y tiene tu <b>contraseña nueva</b>.</li>
-      <li>✓ <b>Volker Mohr</b> ya lo sabe y te crea el correo de la ZSL.</li>
-    </ul>
-  </div>
+  <h2>Cómo usar esta guía</h2>
   <div class="box calm">
     <ul>
-      <li><b>No puedes romper nada.</b> Haz un paso cada vez y márcalo cuando lo termines.</li>
-      <li>Lo mejor: haz los <b>pasos 1, 2 y 3 seguidos</b>, sin prisa. Si quieres, con Alejandro al teléfono.</li>
+      <li>Busca abajo la <b>primera casilla sin marcar</b> y empieza ahí. Puedes seguir otro día; la guía sirve igual.</li>
+      <li>Cuando termines un paso, <b>márcalo</b><span class="pi"> con bolígrafo</span>.</li>
+      <li><b>No puedes romper nada.</b> Si algo sale raro, cierra la página y empieza ese paso otra vez.</li>
       <li>Si algo no funciona dos veces seguidas, <b>no sigas probando</b>: llama a Alejandro.</li>
     </ul>
   </div>
+
+  <h3>Dónde estás</h3>
+  <table>
+    <tr><td>✓ Uni-ID activada</td><td>hecho (18-11-2026)</td></tr>
+    <tr><td>✓ App LinOTP Authenticator en el móvil</td><td>hecho</td></tr>
+    <tr><td>✓ Volker Mohr informado</td><td>hecho</td></tr>
+    <tr><td><span class="pi">☐ </span>Paso 1: descargar el VPN</td><td>en el ordenador</td></tr>
+    <tr><td><span class="pi">☐ </span>Paso 2: conectar el VPN</td><td>en el ordenador</td></tr>
+    <tr><td><span class="pi">☐ </span>Paso 3: código del móvil</td><td>ordenador y móvil a la vez</td></tr>
+    <tr><td><span class="pi">☐ </span>Paso 4: entrar en Moodle</td><td>cada vez que lo necesites</td></tr>
+  </table>
+  <p>Lo más cómodo: haz los pasos 1, 2 y 3 seguidos, sin prisa. Si quieres, con Alejandro al teléfono.</p>
 
   <h3>Tus datos</h3>
   <table>
     <tr><td>Tu Uni-ID<br><span class="hint">(tu nombre de usuario)</span></td>
         <td><span class="code">vt459</span></td></tr>
     <tr><td>Tu contraseña</td>
-        <td>La que acabas de inventar (está en tu papel).</td></tr>
+        <td>La que inventaste al activar la Uni-ID (está en tu papel).</td></tr>
     <tr><td>Contraseña de instalación<br><span class="hint">(en alemán: Rollout-Kennwort)</span></td>
         <td>En la carta «Aktivierungscode für Ihre Uni-ID»: el <b>segundo</b> código en negrita.</td></tr>
+    <tr><td>Tu correo de la universidad</td>
+        <td><span class="code">vt459@uni-heidelberg.de</span></td></tr>
+    <tr><td>Tu correo de la ZSL</td>
+        <td>Te lo dice Volker Mohr.<span class="print-only">Apúntalo aquí: ______________________________</span></td></tr>
   </table>
   <div class="box warn">
-    La <b>contraseña de instalación</b> vale <b>hasta el 19 de diciembre de 2026</b> y sirve <b>como máximo 10 veces</b>. Con esta guía la usas 3 veces. Escríbela despacio.
+    La <b>contraseña de instalación</b> solo hace falta en los pasos 1, 2 y 3. Vale <b>hasta el 19 de diciembre de 2026</b> y sirve <b>como máximo 10 veces</b>. Escríbela despacio. Cuando el paso 3 esté hecho, ya no sirve y tampoco la necesitas.
+  </div>
+
+  <h3>¿Hay que esperar a Volker Mohr?</h3>
+  <div class="box info">
+    <b>No.</b> Volker Mohr solo te crea el correo nuevo de la ZSL (nombre.apellido@zsl.uni-heidelberg.de). El VPN, el código del móvil y Moodle funcionan sin él. Puedes seguir con los pasos cuando quieras. Cuando conteste, apunta tu correo de la ZSL arriba.
   </div>
 </section>
 
@@ -174,7 +191,7 @@
     <li>Cuando pida el segundo código, escribe otra vez la <b>contraseña de instalación</b> (el segundo código en negrita de la carta). Pulsa <span class="de">«Fortfahren»</span>.</li>
     <li>Sale un aviso. Acéptalo.</li>
   </ol>
-  <div class="box good">Listo. Tu ordenador está conectado a la universidad. <b>No lo desconectes</b>: lo necesitas en el paso 3.</div>
+  <div class="box good">Listo. Tu ordenador está conectado a la universidad.<br>Si sigues ahora con el paso 3, <b>déjalo conectado</b>. Si haces el paso 3 otro día, antes vuelve a conectar el VPN como aquí.</div>
   <label class="check no-print"><input type="checkbox"> Paso 2 hecho</label>
   <p class="print-only">☐ Paso 2 hecho</p>
 </section>
@@ -183,6 +200,7 @@
 <section class="card step">
   <div class="step-head"><div class="num">3</div><h2>Preparar el código del móvil</h2></div>
   <p>Necesitas el <b>ordenador y el móvil a la vez</b>. La página se abre en el <b>ordenador</b>.</p>
+  <p>Antes: el <b>VPN tiene que estar conectado</b> (paso 2).</p>
   <a class="btn" href="https://mfa.uni-heidelberg.de" target="_blank" rel="noopener">Abrir la página de códigos</a>
 
   <h3>A. En el ordenador</h3>
@@ -238,6 +256,16 @@
   <div class="box info">La <b>primera vez</b> en Moodle salen unas pantallas para <b>aceptar las condiciones</b>. Acéptalas. Solo pasa una vez.</div>
   <label class="check no-print"><input type="checkbox"> Lo he probado una vez</label>
   <p class="print-only">☐ Lo he probado una vez</p>
+</section>
+
+<!-- MAS ADELANTE -->
+<section class="card">
+  <h2>Bueno saber, para más adelante</h2>
+  <ul>
+    <li>¿Has <b>olvidado tu contraseña</b>? Llama al servicio técnico.</li>
+    <li>¿Vas a <b>cambiar de móvil</b> o lo has perdido? El código está en el móvil. Llama antes a Alejandro o al servicio técnico.</li>
+    <li>¿Te ha <b>contestado Volker Mohr</b>? Apunta tu correo de la ZSL en «Tus datos». Si no sabes cómo abrirlo, pregunta a Alejandro.</li>
+  </ul>
 </section>
 
 <!-- AYUDA -->
