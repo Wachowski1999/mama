@@ -124,9 +124,9 @@
   <table>
     <tr><td>✓ Uni-ID activada</td><td>hecho (18-11-2026)</td></tr>
     <tr><td>✓ App LinOTP Authenticator en el móvil</td><td>hecho</td></tr>
-    <tr><td>✓ Volker Mohr informado</td><td>hecho</td></tr>
+    <tr><td>✓ Correo de la ZSL creado</td><td>Volker Mohr lo ha creado; funciona desde el 19-11-2026 (ver «Tu correo de la ZSL», abajo)</td></tr>
     <tr><td>✓ Paso 1: descargar el VPN</td><td>hecho (18-11-2026): Cisco Secure Client está instalado y la dirección está puesta</td></tr>
-    <tr><td><span class="pi">☐ </span>Paso 2: conectar el VPN</td><td>en el ordenador</td></tr>
+    <tr><td><span class="pi">☐ </span>Paso 2: conectar el VPN</td><td>en el ordenador. El 18-11 salió «Login failed»: volver a probar a partir del 19-11</td></tr>
     <tr><td><span class="pi">☐ </span>Paso 3: código del móvil</td><td>ordenador y móvil a la vez</td></tr>
     <tr><td><span class="pi">☐ </span>Paso 4: entrar en Moodle</td><td>cada vez que lo necesites</td></tr>
   </table>
@@ -144,7 +144,7 @@
     <tr><td>Tu correo de la universidad</td>
         <td><span class="code">vt459@uni-heidelberg.de</span></td></tr>
     <tr><td>Tu correo de la ZSL</td>
-        <td>Te lo dice Volker Mohr.<span class="print-only">Apúntalo aquí: ______________________________</span></td></tr>
+        <td><span class="code">nombre.apellido@zsl.uni-heidelberg.de</span> (te lo ha escrito Volker Mohr; funciona desde el 19-11-2026)</td></tr>
   </table>
   <div class="box warn">
     La <b>contraseña de instalación</b> solo hace falta en los pasos 2 y 3. Vale <b>hasta el 19 de diciembre de 2026</b> y sirve <b>como máximo 10 veces</b>. Escríbela despacio. Cuando el paso 3 esté hecho, ya no sirve y tampoco la necesitas.<br>
@@ -152,10 +152,6 @@
     <span class="print-only">Marca cada uso nuevo: ✓ ✓ ☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐</span>
   </div>
 
-  <h3>¿Hay que esperar a Volker Mohr?</h3>
-  <div class="box info">
-    <b>No.</b> Volker Mohr solo te crea el correo nuevo de la ZSL (nombre.apellido@zsl.uni-heidelberg.de). El VPN, el código del móvil y Moodle funcionan sin él. Puedes seguir con los pasos cuando quieras. Cuando conteste, apunta tu correo de la ZSL arriba.
-  </div>
 </section>
 
 <!-- PASO 3 -->
@@ -199,7 +195,7 @@
     <b>Si sale «Login failed»:</b> Cisco no ha aceptado la contraseña. La contraseña de instalación <b>no</b> se ha gastado.
     <ul>
       <li>Prueba <b>una vez más</b>, despacio y a mano.</li>
-      <li>Si vuelve a salir: <b>no sigas</b>. Justo después de activar la Uni-ID puede que el VPN todavía no la conozca. Prueba al día siguiente.</li>
+      <li>Si vuelve a salir: <b>no sigas</b>. Justo después de activar la Uni-ID, el VPN todavía no la conoce. Según Volker Mohr, funciona probablemente después del reinicio del servidor por la noche (sin garantía). Prueba al día siguiente.</li>
       <li>Si al día siguiente sigue igual, llama al servicio técnico: <b>06221 54-117</b>. Puedes decir:<br><i>«Guten Tag, meine Uni-ID ist vt459. Beim VPN mit Cisco Secure Client kommt ‚Login failed‘. Ist mein Konto für das VPN freigeschaltet?»</i></li>
     </ul>
   </div>
@@ -281,13 +277,34 @@
   <p class="print-only">☐ Lo he probado una vez</p>
 </section>
 
+<!-- CORREO ZSL -->
+<section class="card">
+  <h2>Tu correo de la ZSL</h2>
+  <p>Tu dirección: <span class="code">nombre.apellido@zsl.uni-heidelberg.de</span> (te lo ha escrito Volker Mohr; funciona desde el 19-11-2026)</p>
+  <a class="btn" href="http://exchange.uni-heidelberg.de/" target="_blank" rel="noopener">Abrir el correo</a>
+  <ol>
+    <li>Desde casa: conecta primero el VPN (paso 2).</li>
+    <li>En el navegador escribe <span class="code">exchange.uni-heidelberg.de</span> y pulsa la tecla Intro. El resto de la dirección se completa solo.</li>
+    <li>En <span class="de">«Domäne\Benutzername»</span> (= dominio\usuario) escribe <span class="code">ad\vt459</span></li>
+    <li>En <span class="de">«Kennwort»</span> (= contraseña) escribe <b>tu contraseña de la Uni-ID</b>, la misma que en Cisco.</li>
+  </ol>
+  <div class="box info">
+    <b>La barra «\» en el Mac:</b>
+    <ul>
+      <li>Teclado alemán: <b>⌥ Option + ⇧ Mayúsculas + 7</b></li>
+      <li>Teclado español: <b>⌥ Option + º</b> (la tecla a la izquierda del 1)</li>
+    </ul>
+  </div>
+  <div class="box warn"><b>Desde casa, primero el VPN.</b> Sin el VPN conectado (paso 2), la página se queda cargando. Igual que Moodle.</div>
+</section>
+
 <!-- MAS ADELANTE -->
 <section class="card">
   <h2>Bueno saber, para más adelante</h2>
   <ul>
     <li>¿Has <b>olvidado tu contraseña</b>? Llama al servicio técnico.</li>
     <li>¿Vas a <b>cambiar de móvil</b> o lo has perdido? El código está en el móvil. Llama antes a Alejandro o al servicio técnico.</li>
-    <li>¿Te ha <b>contestado Volker Mohr</b>? Apunta tu correo de la ZSL en «Tus datos». Si no sabes cómo abrirlo, pregunta a Alejandro.</li>
+    <li>¿No puedes entrar en el <b>correo de la ZSL</b>? Pregunta a Alejandro o a Volker Mohr.</li>
   </ul>
 </section>
 
