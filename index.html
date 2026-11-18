@@ -95,6 +95,41 @@
     section a[href^="http"]:not(.btn)::after { content: " (" attr(href) ")"; font-size: 10.5pt; word-break: break-all; }
     label.check input { width: 20px; height: 20px; }
   }
+
+  /* ---- Web-Fassung zum Durchblaettern (bauen.py) ---- */
+  .paged main { padding-bottom: 150px; }
+  .paged section.card { display: none; min-height: calc(100vh - 290px); padding: 28px 26px 34px; }
+  .paged section.card.activa { display: block; }
+  .paged .pantalla { display: none; }
+  .paged .pantalla.activa { display: block; }
+  .paged .pantalla > * { margin-top: 30px; margin-bottom: 0; }
+  .paged .pantalla > *:first-child { margin-top: 18px; }
+  .paged .pantalla > ol > li, .paged .pantalla > ul > li { margin: 0 0 44px; padding-left: 6px; }
+  .paged .pantalla > ol > li:last-child, .paged .pantalla > ul > li:last-child { margin-bottom: 0; }
+  .paged .pantalla > ol > li::marker { font-weight: 700; font-size: 1.15em; color: var(--accent); }
+  .paged .pantalla li li { margin: 18px 0; }
+  .paged .pantalla td { padding: 16px 6px; }
+  .paged.no-inicio h1, .paged.no-inicio .sub { display: none; }
+  .paged .step-head, .paged section.card > h2 { padding-bottom: 14px; border-bottom: 1px solid var(--line); margin-bottom: 6px; }
+  .nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--bg);
+         border-top: 1px solid var(--line); padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); }
+  .nav-in { max-width: 820px; margin: 0 auto; display: flex; align-items: center; gap: 12px; }
+  .nav .btn { margin: 0; padding: 16px 22px; font-size: 21px; }
+  .nav .sitio { flex: 1; text-align: center; color: var(--muted); font-size: 17px; line-height: 1.3; }
+  .nav .btn[hidden] { display: inline-block !important; visibility: hidden; }
+  @media (max-width: 520px) {
+    .nav .btn { padding: 14px 14px; font-size: 18px; }
+    .nav .sitio { font-size: 15px; }
+    .paged section.card { padding: 22px 16px 28px; }
+  }
+  @media print {
+    .nav { display: none !important; }
+    .paged section.card, .paged .pantalla { display: block !important; min-height: 0; }
+    .paged.no-inicio h1, .paged.no-inicio .sub { display: block; }
+    .paged .pantalla > * { margin-top: 10px; }
+    .paged .pantalla > ol > li, .paged .pantalla > ul > li { margin: 6px 0; }
+    .paged .pantalla td { padding: 10px 6px; }
+  }
 </style>
 </head>
 <body>
@@ -152,29 +187,6 @@
     <span class="print-only">Marca cada uso nuevo: ✓ ✓ ☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐</span>
   </div>
 
-</section>
-
-<!-- PASO 3 -->
-<section class="card step">
-  <div class="step-head"><div class="num">1</div><h2>Descargar el programa del VPN</h2></div>
-  <p>En el ordenador. El programa se llama <b>Cisco Secure Client</b>.</p>
-  <a class="btn" href="https://vpn-ac.urz.uni-heidelberg.de/+CSCOE+/logon.html" target="_blank" rel="noopener">Abrir la página de descarga</a>
-  <div class="box warn"><b>Usa Safari</b> para descargar. Con Firefox la descarga falló («No se pudo guardar … no se pudo leer el archivo origen»).<br>También lo puede descargar Alejandro con su propia Uni-ID; así no gastas la contraseña de instalación.</div>
-  <ol>
-    <li>Escribe tu usuario <span class="code">vt459</span> y <b>tu contraseña</b>.</li>
-    <li>Después la página pide un segundo código (<span class="de">«Bitte zweiten Faktor eingeben (OTP)»</span>). Escribe la <b>contraseña de instalación</b> (el segundo código en negrita de la carta).</li>
-    <li>Pulsa <span class="de">«Fortfahren»</span> o <span class="de">«Continue»</span> (= continuar).</li>
-    <li>Pulsa <span class="de">«Start AnyConnect»</span> y después <span class="de">«Download»</span> (= descargar).</li>
-    <li>Abre el archivo que se ha descargado. Está en la carpeta <b>«Descargas»</b>. Instálalo pulsando siempre «Continuar» o «Siguiente».</li>
-  </ol>
-  <div class="box info">
-    <ul>
-      <li>Si te pregunta qué partes instalar: marca solo <b>«VPN»</b>.</li>
-      <li>En el Mac puede salir un aviso de seguridad. Entonces abre <b>Ajustes del Sistema → Privacidad y seguridad</b> y pulsa <b>«Permitir»</b>.</li>
-    </ul>
-  </div>
-  <label class="check no-print"><input type="checkbox"> Paso 1 hecho</label>
-  <p class="print-only">✓ Paso 1 hecho (18-11-2026)</p>
 </section>
 
 <!-- PASO 4 -->
@@ -324,7 +336,7 @@
 </main>
 <script>
 (function () {
-  var KEY = "guia-uni-id-pasos";
+  var KEY = "guia-uni-id-pasos-web2";
   var boxes = Array.prototype.slice.call(document.querySelectorAll(".step input[type=checkbox]"));
   var saved = [];
   try { saved = JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) { saved = []; }
@@ -349,6 +361,70 @@
       navigator.clipboard.writeText(txt).then(function () { c.hidden = false; setTimeout(function () { c.hidden = true; }, 2000); }, function () {});
     }
   });
+})();
+</script>
+
+<script>
+/* Web-Fassung zum Durchblaettern (bauen.py): hoechstens zwei Anweisungen pro Bildschirm */
+(function () {
+  var POS = "guia-uni-id-pantalla-web2";
+  var pantallas = [];
+  function es(el, sel) { return el.matches && el.matches(sel); }
+  function largo(el) { return (el.textContent || "").replace(/\s+/g, " ").trim().length; }
+  Array.prototype.forEach.call(document.querySelectorAll("main > section.card"), function (sec) {
+    var hijos = Array.prototype.slice.call(sec.children), cur = null;
+    function nueva() { cur = document.createElement("div"); cur.className = "pantalla"; cur.u = 0; sec.appendChild(cur); pantallas.push({ el: cur, sec: sec }); return cur; }
+    hijos.forEach(function (h) {
+      if (es(h, ".step-head") || (h.tagName === "H2")) return;              // Titel bleibt oben stehen
+      if (h.tagName === "H3") { nueva(); cur.appendChild(h); return; }
+      if (h.tagName === "OL") {
+        var items = Array.prototype.slice.call(h.children), n = parseInt(h.getAttribute("start") || "1", 10);
+        for (var i = 0; i < items.length; i += 2) {
+          if (!cur || cur.u > 0) nueva();
+          var ol = h.cloneNode(false); ol.setAttribute("start", n + i);
+          ol.appendChild(items[i]); if (items[i + 1]) ol.appendChild(items[i + 1]);
+          cur.appendChild(ol); cur.u = 2;
+        }
+        h.remove(); return;
+      }
+      if (es(h, "label.check") || es(h, ".print-only")) { if (!cur) nueva(); cur.appendChild(h); return; }
+      if (h.tagName === "P" || es(h, "a.btn")) { if (!cur) nueva(); cur.appendChild(h); return; }
+      var peso = (h.tagName === "TABLE") ? 2 : 1;
+      var corto = largo(h) < 170;
+      if (!cur || cur.u + peso > 2) { if (!(cur && corto && peso === 1 && cur.u <= 2)) nueva(); }
+      cur.appendChild(h); cur.u += (corto ? 0 : peso);
+    });
+  });
+  if (!pantallas.length) return;
+  document.body.classList.add("paged");
+
+  var nav = document.createElement("div"); nav.className = "nav no-print";
+  nav.innerHTML = '<div class="nav-in"><button type="button" class="btn secondary" id="ir-atras">← Atrás</button>' +
+    '<div class="sitio" id="sitio"></div>' +
+    '<button type="button" class="btn" id="ir-sig">Siguiente →</button></div>';
+  document.body.appendChild(nav);
+  var atras = document.getElementById("ir-atras"), sig = document.getElementById("ir-sig"), sitio = document.getElementById("sitio");
+  var pos = 0;
+  function titulo(sec) { var h = sec.querySelector(".step-head h2, h2"); var n = sec.querySelector(".step-head .num"); return (n ? "Paso " + n.textContent.trim() + ": " : "") + (h ? h.textContent.trim() : ""); }
+  function ir(n, saltar) {
+    pos = Math.max(0, Math.min(pantallas.length - 1, n));
+    pantallas.forEach(function (p, i) { p.el.classList.toggle("activa", i === pos); });
+    Array.prototype.forEach.call(document.querySelectorAll("main > section.card"), function (s) { s.classList.toggle("activa", s === pantallas[pos].sec); });
+    document.body.classList.toggle("no-inicio", pos !== 0);
+    atras.hidden = pos === 0; sig.hidden = pos === pantallas.length - 1;
+    sitio.textContent = "Pantalla " + (pos + 1) + " de " + pantallas.length;
+    try { localStorage.setItem(POS, String(pos)); } catch (e) {}
+    if (!saltar) window.scrollTo(0, 0);
+  }
+  atras.addEventListener("click", function () { ir(pos - 1); });
+  sig.addEventListener("click", function () { ir(pos + 1); });
+  document.addEventListener("keydown", function (e) {
+    if (e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+    if (e.key === "ArrowRight") ir(pos + 1); else if (e.key === "ArrowLeft") ir(pos - 1);
+  });
+  var guardada = 0;
+  try { guardada = parseInt(localStorage.getItem(POS) || "0", 10) || 0; } catch (e) {}
+  ir(guardada, true);
 })();
 </script>
 </body>
