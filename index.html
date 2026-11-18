@@ -125,19 +125,20 @@
     <tr><td>✓ Uni-ID activada</td><td>hecho (18-11-2026)</td></tr>
     <tr><td>✓ App LinOTP Authenticator en el móvil</td><td>hecho</td></tr>
     <tr><td>✓ Volker Mohr informado</td><td>hecho</td></tr>
-    <tr><td><span class="pi">☐ </span>Paso 1: descargar el VPN</td><td>en el ordenador</td></tr>
+    <tr><td>✓ Paso 1: descargar el VPN</td><td>hecho (18-11-2026): Cisco Secure Client está instalado y la dirección está puesta</td></tr>
     <tr><td><span class="pi">☐ </span>Paso 2: conectar el VPN</td><td>en el ordenador</td></tr>
     <tr><td><span class="pi">☐ </span>Paso 3: código del móvil</td><td>ordenador y móvil a la vez</td></tr>
     <tr><td><span class="pi">☐ </span>Paso 4: entrar en Moodle</td><td>cada vez que lo necesites</td></tr>
   </table>
-  <p>Lo más cómodo: haz los pasos 1, 2 y 3 seguidos, sin prisa. Si quieres, con Alejandro al teléfono.</p>
+  <p>Lo más cómodo: haz los pasos 2 y 3 seguidos, sin prisa. Si quieres, con Alejandro al teléfono.</p>
 
   <h3>Tus datos</h3>
   <table>
     <tr><td>Tu Uni-ID<br><span class="hint">(tu nombre de usuario)</span></td>
         <td><span class="code">vt459</span></td></tr>
     <tr><td>Tu contraseña</td>
-        <td>La que inventaste al activar la Uni-ID (está en tu papel).</td></tr>
+        <td>La que inventaste al activar la Uni-ID (está en tu papel).<br>
+            <span class="hint">Escríbela siempre a mano, letra por letra. Si el Mac ofrece «Contraseñas…», no lo uses: puede poner otra contraseña.</span></td></tr>
     <tr><td>Contraseña de instalación<br><span class="hint">(en alemán: Rollout-Kennwort)</span></td>
         <td>En la carta «Aktivierungscode für Ihre Uni-ID»: el <b>segundo</b> código en negrita.</td></tr>
     <tr><td>Tu correo de la universidad</td>
@@ -146,7 +147,9 @@
         <td>Te lo dice Volker Mohr.<span class="print-only">Apúntalo aquí: ______________________________</span></td></tr>
   </table>
   <div class="box warn">
-    La <b>contraseña de instalación</b> solo hace falta en los pasos 1, 2 y 3. Vale <b>hasta el 19 de diciembre de 2026</b> y sirve <b>como máximo 10 veces</b>. Escríbela despacio. Cuando el paso 3 esté hecho, ya no sirve y tampoco la necesitas.
+    La <b>contraseña de instalación</b> solo hace falta en los pasos 2 y 3. Vale <b>hasta el 19 de diciembre de 2026</b> y sirve <b>como máximo 10 veces</b>. Escríbela despacio. Cuando el paso 3 esté hecho, ya no sirve y tampoco la necesitas.<br>
+    Ya se ha usado <b>2 veces</b> (18-11-2026). Quedan 8. Solo cuenta cuando Cisco o la página la piden y la aceptan; un «Login failed» antes no cuenta.
+    <span class="print-only">Marca cada uso nuevo: ✓ ✓ ☐ ☐ ☐ ☐ ☐ ☐ ☐ ☐</span>
   </div>
 
   <h3>¿Hay que esperar a Volker Mohr?</h3>
@@ -160,6 +163,7 @@
   <div class="step-head"><div class="num">1</div><h2>Descargar el programa del VPN</h2></div>
   <p>En el ordenador. El programa se llama <b>Cisco Secure Client</b>.</p>
   <a class="btn" href="https://vpn-ac.urz.uni-heidelberg.de/+CSCOE+/logon.html" target="_blank" rel="noopener">Abrir la página de descarga</a>
+  <div class="box warn"><b>Usa Safari</b> para descargar. Con Firefox la descarga falló («No se pudo guardar … no se pudo leer el archivo origen»).<br>También lo puede descargar Alejandro con su propia Uni-ID; así no gastas la contraseña de instalación.</div>
   <ol>
     <li>Escribe tu usuario <span class="code">vt459</span> y <b>tu contraseña</b>.</li>
     <li>Después la página pide un segundo código (<span class="de">«Bitte zweiten Faktor eingeben (OTP)»</span>). Escribe la <b>contraseña de instalación</b> (el segundo código en negrita de la carta).</li>
@@ -174,7 +178,7 @@
     </ul>
   </div>
   <label class="check no-print"><input type="checkbox"> Paso 1 hecho</label>
-  <p class="print-only">☐ Paso 1 hecho</p>
+  <p class="print-only">✓ Paso 1 hecho (18-11-2026)</p>
 </section>
 
 <!-- PASO 4 -->
@@ -185,12 +189,31 @@
     <li>En la casilla de la dirección tiene que poner:<br>
       <span class="code" id="vpn-addr">vpn-ac.urz.uni-heidelberg.de</span>
       <button class="btn secondary no-print" type="button" id="copy-btn">Copiar</button><span class="copied" id="copied" hidden>copiado</span><br>
-      Si está vacía, escríbela tú.</li>
+      La primera vez la lista está vacía: escribe la dirección a mano.</li>
     <li>Pulsa <span class="de">«Connect»</span> o <span class="de">«Verbinden»</span> (= conectar).</li>
-    <li>Usuario <span class="code">vt459</span> y <b>tu contraseña</b>.</li>
+    <li>Usuario <span class="code">vt459</span> y <b>tu contraseña</b>, escrita a mano (no uses «Contraseñas…»). Pulsa <span class="de">«OK»</span>.</li>
     <li>Cuando pida el segundo código, escribe otra vez la <b>contraseña de instalación</b> (el segundo código en negrita de la carta). Pulsa <span class="de">«Fortfahren»</span>.</li>
     <li>Sale un aviso. Acéptalo.</li>
   </ol>
+  <div class="box info">
+    <b>Si sale «Login failed»:</b> Cisco no ha aceptado la contraseña. La contraseña de instalación <b>no</b> se ha gastado.
+    <ul>
+      <li>Prueba <b>una vez más</b>, despacio y a mano.</li>
+      <li>Si vuelve a salir: <b>no sigas</b>. Justo después de activar la Uni-ID puede que el VPN todavía no la conozca. Prueba al día siguiente.</li>
+      <li>Si al día siguiente sigue igual, llama al servicio técnico: <b>06221 54-117</b>. Puedes decir:<br><i>«Guten Tag, meine Uni-ID ist vt459. Beim VPN mit Cisco Secure Client kommt ‚Login failed‘. Ist mein Konto für das VPN freigeschaltet?»</i></li>
+    </ul>
+  </div>
+  <h3>Palabras de Cisco</h3>
+  <p>Cisco sale en inglés y alemán. Lo que significa:</p>
+  <table>
+    <tr><td>Connect</td><td>conectar</td></tr>
+    <tr><td>Username / Benutzername</td><td>usuario → <span class="code">vt459</span></td></tr>
+    <tr><td>Password / Passwort</td><td>contraseña</td></tr>
+    <tr><td>Second factor / OTP</td><td>segundo código</td></tr>
+    <tr><td>Login failed</td><td>no ha aceptado la contraseña</td></tr>
+    <tr><td>Accept / Cancel</td><td>aceptar / cancelar</td></tr>
+    <tr><td>Disconnect</td><td>desconectar</td></tr>
+  </table>
   <div class="box good">Listo. Tu ordenador está conectado a la universidad.<br>Si sigues ahora con el paso 3, <b>déjalo conectado</b>. Si haces el paso 3 otro día, antes vuelve a conectar el VPN como aquí.</div>
   <label class="check no-print"><input type="checkbox"> Paso 2 hecho</label>
   <p class="print-only">☐ Paso 2 hecho</p>
